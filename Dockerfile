@@ -21,7 +21,7 @@ MAINTAINER Werner Van Geit
 USER root
 
 RUN apt-get update
-RUN apt-get install -y wget libx11-6 python-dev git build-essential libncurses-dev git
+RUN apt-get install -y wget libx11-6 python-dev git build-essential libncurses-dev
 RUN wget https://bootstrap.pypa.io/get-pip.py
 RUN python get-pip.py
 RUN wget http://www.neuron.yale.edu/ftp/neuron/versions/v7.4/nrn-7.4.x86_64.deb
@@ -32,9 +32,11 @@ RUN rm nrn-7.4.x86_64.deb
 #RUN pip install bluepyopt
 RUN pip install LFPy
 
+RUN cd notebooks
 RUN git clone http://bitbucket.org/torbness/vimeapy.git
 RUN cd vimeapy
-#RUN sudo python setup.py install build_ext -i
+RUN python setup.py install build_ext -i
+RUN cd ..
 RUN cd ..
 
 
