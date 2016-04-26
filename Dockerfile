@@ -34,7 +34,7 @@ RUN pip install LFPy
 
 RUN git clone http://bitbucket.org/torbness/vimeapy.git
 RUN cd vimeapy
-RUN sudo python setup.py install build_ext -i
+#RUN sudo python setup.py install build_ext -i
 RUN cd ..
 
 
