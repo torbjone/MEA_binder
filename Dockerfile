@@ -1,4 +1,6 @@
 FROM gcr.io/generic-notebooks/binder-base
+RUN pwd
+RUN ls
 # Copyright (c) 2016, EPFL/Blue Brain Project
 #
 # This file is part of BluePyOpt <https://github.com/BlueBrain/BluePyOpt>
@@ -32,12 +34,12 @@ RUN rm nrn-7.4.x86_64.deb
 #RUN pip install bluepyopt
 RUN pip install LFPy
 
-RUN cd notebooks
-RUN git clone http://bitbucket.org/torbness/vimeapy.git
-RUN cd vimeapy
-RUN python setup.py install build_ext -i
-RUN cd ..
-RUN cd ..
+#RUN cd notebooks
+RUN git clone http://bitbucket.org/torbness/vimeapy.git notebooks/vimeapy
+#RUN cd vimeapy
+#RUN python setup.py install build_ext -i
+#RUN cd ..
+#RUN cd ..
 
 
 ENV PYTHONPATH /usr/local/nrn/lib/python:$PYTHONPATH
