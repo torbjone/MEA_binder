@@ -33,9 +33,9 @@ RUN rm nrn-7.4.x86_64.deb
 RUN pip install LFPy
 
 RUN git clone http://bitbucket.org/torbness/vimeapy.git
-#RUN cd vimeapy
-#RUN sudo python setup.py install build_ext -i
-#RUN cd ..
+RUN cd vimeapy
+RUN sudo python setup.py install build_ext -i
+RUN cd ..
 
 
 ENV PYTHONPATH /usr/local/nrn/lib/python:$PYTHONPATH
